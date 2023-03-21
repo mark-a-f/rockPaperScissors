@@ -1,4 +1,4 @@
-// Randomly produce computer choice of Rock, Paper or Scissors
+// Return random computer choice of Rock, Paper or Scissors
 function getComputerChoice() {
   let choiceInt = Math.floor(Math.random() * 3);
   if (choiceInt === 0) {
