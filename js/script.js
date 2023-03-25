@@ -58,9 +58,9 @@ function firstLetterUpperCase(word) {
 
 // Play 5 rounds
 function playGame() {
-  let playerScore = 0;
-  let computerScore = 0;
-  let scoreTracker = [playerScore, computerScore];
+  // scoreTracker[0] = player score
+  // scoreTracker[1] = computer score
+  let scoreTracker = [0, 0];
   let round = 1;
 
   while (scoreTracker[0] < 3 && scoreTracker[1] < 3) {
