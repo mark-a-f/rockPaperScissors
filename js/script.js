@@ -50,6 +50,14 @@ function firstLetterUpperCase(word) {
   return formattedWord;
 }
 
+function playGame() {
+  let round = 0;
+  while (round < 5) {
+    let computerChoice = getComputerChoice();
+    console.log(`Round ${round}: ` + playRound(playerChoice, computerChoice));
+    round++;
+  }
+}
+
 const playerChoice = "Rock";
-const computerChoice = getComputerChoice();
-console.log(playRound(playerChoice, computerChoice));
+playGame();
