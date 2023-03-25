@@ -10,6 +10,7 @@ function getComputerChoice() {
   }
 }
 
+// Play one round of rock, paper, scissors
 function playRound(playerChoice, computerChoice) {
   const formattedPlayerChoice = firstLetterUpperCase(playerChoice);
 
@@ -39,6 +40,7 @@ function playRound(playerChoice, computerChoice) {
   }
 }
 
+// Return word with first letter capitalized and remaining letters lower case
 function firstLetterUpperCase(word) {
   word = word.toLowerCase();
   let firstLetter = word.charAt(0);
