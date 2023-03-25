@@ -61,17 +61,27 @@ function playGame() {
   let playerScore = 0;
   let computerScore = 0;
   let scoreTracker = [playerScore, computerScore];
+  let round = 1;
 
-  let round = 0;
-  while (round < 5) {
+  while (scoreTracker[0] < 3 && scoreTracker[1] < 3) {
     let computerChoice = getComputerChoice();
     let playerChoice = playerSelect();
     console.log(
-      `Round ${round + 1}: ` +
+      `Round ${round}: ` +
         playRound(playerChoice, computerChoice, scoreTracker) +
         `\nPlayer Score: ${scoreTracker[0]} | Computer Score: ${scoreTracker[1]}`
     );
     round++;
+  }
+
+  if (scoreTracker[0] === 3) {
+    console.log(
+      `You won!\nFinal Score:\nPlayer: ${scoreTracker[0]} || Computer: ${scoreTracker[1]}`
+    );
+  } else {
+    console.log(
+      `You lost!\nFinal Score:\nPlayer: ${scoreTracker[0]} || Computer: ${scoreTracker[1]}`
+    );
   }
 }
 
