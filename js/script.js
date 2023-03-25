@@ -11,13 +11,7 @@ function getComputerChoice() {
 }
 
 function playRound(playerChoice, computerChoice) {
-  // Lowercase playerChoice and capitalize first letter to match computerChoice format
-  playerChoice = playerChoice.toLowerCase();
-
-  let firstLetter = playerChoice.charAt(0);
-  let firstLetterCap = firstLetter.toUpperCase();
-  let remainingWord = playerChoice.slice(1);
-  let formattedPlayerChoice = firstLetterCap + remainingWord;
+  const formattedPlayerChoice = firstLetterUpperCase(playerChoice);
 
   if (formattedPlayerChoice === computerChoice) {
     return "It is a draw!";
@@ -43,6 +37,15 @@ function playRound(playerChoice, computerChoice) {
   } else {
     return "You lose! Rock beats Scissors!";
   }
+}
+
+function firstLetterUpperCase(word) {
+  word = word.toLowerCase();
+  let firstLetter = word.charAt(0);
+  let firstLetterCap = firstLetter.toUpperCase();
+  let remainingWord = word.slice(1);
+  let formattedWord = firstLetterCap + remainingWord;
+  return formattedWord;
 }
 
 const playerChoice = "Rock";
