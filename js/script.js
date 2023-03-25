@@ -11,31 +11,37 @@ function getComputerChoice() {
 }
 
 // Play one round of rock, paper, scissors
-function playRound(playerChoice, computerChoice) {
+function playRound(playerChoice, computerChoice, scoreTracker) {
   const formattedPlayerChoice = firstLetterUpperCase(playerChoice);
 
   if (formattedPlayerChoice === computerChoice) {
     return "It is a draw!";
   } else if (formattedPlayerChoice === "Rock" && computerChoice === "Paper") {
+    scoreTracker[1] = scoreTracker[1] + 1;
     return "You lose! Paper beats Rock!";
   } else if (
     formattedPlayerChoice === "Rock" &&
     computerChoice === "Scissors"
   ) {
+    scoreTracker[0] = scoreTracker[0] + 1;
     return "You win! Rock beats Scissors!";
   } else if (formattedPlayerChoice === "Paper" && computerChoice === "Rock") {
+    scoreTracker[0] = scoreTracker[0] + 1;
     return "You win! Paper beats Rock!";
   } else if (
     formattedPlayerChoice === "Paper" &&
     computerChoice === "Scissors"
   ) {
+    scoreTracker[1] = scoreTracker[1] + 1;
     return "You lose! Scissors beats Paper!";
   } else if (
     formattedPlayerChoice === "Scissors" &&
     computerChoice === "Paper"
   ) {
+    scoreTracker[0] = scoreTracker[0] + 1;
     return "You win! Scissors beats Paper!";
   } else {
+    scoreTracker[1] = scoreTracker[1] + 1;
     return "You lose! Rock beats Scissors!";
   }
 }
@@ -52,12 +58,18 @@ function firstLetterUpperCase(word) {
 
 // Play 5 rounds
 function playGame() {
+  let playerScore = 0;
+  let computerScore = 0;
+  let scoreTracker = [playerScore, computerScore];
+
   let round = 0;
   while (round < 5) {
     let computerChoice = getComputerChoice();
     let playerChoice = playerSelect();
     console.log(
-      `Round ${round + 1}: ` + playRound(playerChoice, computerChoice)
+      `Round ${round + 1}: ` +
+        playRound(playerChoice, computerChoice, scoreTracker) +
+        `\nPlayer Score: ${scoreTracker[0]} | Computer Score: ${scoreTracker[1]}`
     );
     round++;
   }
@@ -67,6 +79,11 @@ function playGame() {
 function playerSelect() {
   const playerSelection = prompt("Enter your choice: ");
   return playerSelection;
+}
+
+function updateScores(boolean) {
+  if (boolean === True) {
+  }
 }
 
 playGame();
