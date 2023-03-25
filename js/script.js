@@ -81,9 +81,4 @@ function playerSelect() {
   return playerSelection;
 }
 
-function updateScores(boolean) {
-  if (boolean === True) {
-  }
-}
-
 playGame();
