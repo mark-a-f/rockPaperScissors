@@ -50,6 +50,7 @@ function firstLetterUpperCase(word) {
   return formattedWord;
 }
 
+// Play 5 rounds
 function playGame() {
   let round = 0;
   while (round < 5) {
