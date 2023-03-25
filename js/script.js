@@ -15,34 +15,34 @@ function playRound(playerChoice, computerChoice, scoreTracker) {
   const formattedPlayerChoice = firstLetterUpperCase(playerChoice);
 
   if (formattedPlayerChoice === computerChoice) {
-    return "It is a draw!";
+    return `You chose ${formattedPlayerChoice}. Computer chose ${computerChoice}. It is a draw!`;
   } else if (formattedPlayerChoice === "Rock" && computerChoice === "Paper") {
     scoreTracker[1] = scoreTracker[1] + 1;
-    return "You lose! Paper beats Rock!";
+    return `You chose ${formattedPlayerChoice}. Computer chose ${computerChoice}. You lose! Paper beats Rock!`;
   } else if (
     formattedPlayerChoice === "Rock" &&
     computerChoice === "Scissors"
   ) {
     scoreTracker[0] = scoreTracker[0] + 1;
-    return "You win! Rock beats Scissors!";
+    return `You chose ${formattedPlayerChoice}. Computer chose ${computerChoice}. You win! Rock beats Scissors!`;
   } else if (formattedPlayerChoice === "Paper" && computerChoice === "Rock") {
     scoreTracker[0] = scoreTracker[0] + 1;
-    return "You win! Paper beats Rock!";
+    return `You chose ${formattedPlayerChoice}. Computer chose ${computerChoice}. You win! Paper beats Rock!`;
   } else if (
     formattedPlayerChoice === "Paper" &&
     computerChoice === "Scissors"
   ) {
     scoreTracker[1] = scoreTracker[1] + 1;
-    return "You lose! Scissors beats Paper!";
+    return `You chose ${formattedPlayerChoice}. Computer chose ${computerChoice}. You lose! Scissors beats Paper!`;
   } else if (
     formattedPlayerChoice === "Scissors" &&
     computerChoice === "Paper"
   ) {
     scoreTracker[0] = scoreTracker[0] + 1;
-    return "You win! Scissors beats Paper!";
+    return `You chose ${formattedPlayerChoice}. Computer chose ${computerChoice}. You win! Scissors beats Paper!`;
   } else {
     scoreTracker[1] = scoreTracker[1] + 1;
-    return "You lose! Rock beats Scissors!";
+    return `You chose ${formattedPlayerChoice}. Computer chose ${computerChoice}. You lose! Rock beats Scissors!`;
   }
 }
 
