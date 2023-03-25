@@ -55,10 +55,18 @@ function playGame() {
   let round = 0;
   while (round < 5) {
     let computerChoice = getComputerChoice();
-    console.log(`Round ${round}: ` + playRound(playerChoice, computerChoice));
+    let playerChoice = playerSelect();
+    console.log(
+      `Round ${round + 1}: ` + playRound(playerChoice, computerChoice)
+    );
     round++;
   }
 }
 
-const playerChoice = "Rock";
+// Prompt user for selection
+function playerSelect() {
+  const playerSelection = prompt("Enter your choice: ");
+  return playerSelection;
+}
+
 playGame();
